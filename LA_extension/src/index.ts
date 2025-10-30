@@ -4,89 +4,127 @@ import {
 } from '@jupyterlab/application';
 
 import { ICommandPalette, MainAreaWidget } from '@jupyterlab/apputils';
-
+import { INotebookTracker } from '@jupyterlab/notebook';
 import { Widget } from '@lumino/widgets';
 
-interface APODResponse {
-  copyright: string;
-  date: string;
-  explanation: string;
-  media_type: 'video' | 'image';
-  title: string;
-  url: string;
-};
+import dashboardHTML from './dashboard';
 
-/**
- * Initialization data for the LAextension extension.
- */
+
 const plugin: JupyterFrontEndPlugin<void> = {
-  id: 'jupyterlab-apod',
-  description: 'Show a random NASA Astronomy Picture of the Day in a JupyterLab panel.',
+  id: 'jupyterlab_notebook_dashboard:plugin',
+  description: 'A JupyterLab extension that adds a dashboard showing notebook open times',
   autoStart: true,
-  requires: [ICommandPalette],
-  activate: async (app: JupyterFrontEnd, palette: ICommandPalette) => {
-    console.log('JupyterLab extension jupyterlab_apod is activated!');
-
-    // Define a widget creator function,
-    // then call it to make a new widget
-    const newWidget = async () => {
-      // Create a blank content widget inside of a MainAreaWidget
-      const content = new Widget();
-      const widget = new MainAreaWidget({ content });
-
-      // Add an image element to the content
-      let img = document.createElement('img');
-      content.node.appendChild(img);
-
-      // Get a random date string in YYYY-MM-DD format
-      function randomDate() {
-        const start = new Date(2010, 1, 1);
-        const end = new Date();
-        const randomDate = new Date(start.getTime() + Math.random()*(end.getTime() - start.getTime()));
-        return randomDate.toISOString().slice(0, 10);
-      }
-
-      // Fetch info about a random picture
-      const response = await fetch(`https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=${randomDate()}`);
-      const data = await response.json() as APODResponse;
-
-      if (data.media_type === 'image') {
-        // Populate the image
-        img.src = data.url;
-        img.title = data.title;
-      } else {
-        console.log('Random APOD was not a picture.');
-      }
-
-
-      widget.id = 'apod-jupyterlab';
-      widget.title.label = 'Astronomy Picture';
-      widget.title.closable = true;
-      return widget;
-    }
-      let widget = await newWidget();
-
-      // Add an application command
-      const command: string = 'apod:open';
-      app.commands.addCommand(command, {
-        label: 'Random Astronomy Picture',
-        execute: async () => {
-          // Regenerate the widget if disposed
-          if (widget.isDisposed) {
-            widget = await newWidget();
-          }
-          if (!widget.isAttached) {
-            // Attach the widget to the main work area if it's not there
-            app.shell.add(widget, 'main');
-          }
-          // Activate the widget
-          app.shell.activateById(widget.id);
-        }
-      });
-
-    // Add the command to the palette.
-    palette.addItem({ command, category: 'Tutorial' });
-  }
+  requires: [ICommandPalette, INotebookTracker],
+  activate: activate
 };
 
 export default plugin;
+
+type NotebookInfo = {
+    time: string;
+    path: string;
+    title: string;
+  };
+
+
+// Function only run when the extension is activated (when JupyterLab starts)
+function activate(
+  app: JupyterFrontEnd,
+  palette: ICommandPalette,
+  notebookTracker: INotebookTracker
+) : void {
+  console.log('Notebook Dashboard extension loaded');
+
+  // Guardamos la hora de apertura de cada notebook
+  const NotebookInfo_Array = new Map<string, NotebookInfo>();
+  notebookTracker.widgetAdded.connect((sender, notebookPanel) => {
+    const now = new Date();
+    const time = now.toLocaleTimeString('de-DE', { hour12: false });
+    NotebookInfo_Array.set(notebookPanel.id, {
+      time,
+      path: notebookPanel.context.path,
+      title: notebookPanel.title.label
+    });
+  });
+
+
+
+  const command = 'dashboard:open';
+  app.commands.addCommand(command, {
+    label: 'Open Notebook Dashboard',
+    execute: () => execute(app, notebookTracker, NotebookInfo_Array)
+  });
+
+  palette.addItem({ command, category: 'Dashboard' });
+}
+
+
+// Function only run when the extension is opened (command executed)
+function execute(
+  app: JupyterFrontEnd,
+  notebookTracker: INotebookTracker,
+  NotebookInfo_Array: Map<string, NotebookInfo>
+) :void {
+
+  // Creamos el contenido
+  const content = new Widget();
+  content.node.innerHTML = dashboardHTML;
+
+  // Creamos el widget del dashboard
+  const widget = new MainAreaWidget({ content });
+  widget.id = 'notebook-dashboard-panel';
+  widget.title.label = 'Notebook Dashboard';
+  widget.title.closable = true;
+
+
+  // Función para actualizar la hora del notebook activo
+  const updateDashboard = () => {
+    if (!widget.isAttached) return;
+
+    const container = content.node.querySelector<HTMLDivElement>('#notebook-info')!;
+    container.innerHTML = ''; // limpiar contenido previo
+
+    if (notebookTracker.size === 0) {
+      container.textContent = 'No hay notebooks abiertos';
+      return;
+    }
+
+    const ol = document.createElement('ol');
+
+    notebookTracker.forEach(panel => {
+      const info = NotebookInfo_Array.get(panel.id);
+      const liNotebook = document.createElement('li');
+      liNotebook.textContent = info ? info.title : 'Notebook desconocido';
+
+      const ul = document.createElement('ul');
+
+      if (info) {
+        const liTime = document.createElement('li');
+        liTime.textContent = `Hora de apertura: ${info.time}`;
+        const liPath = document.createElement('li');
+        liPath.textContent = `Path: ${info.path}`;
+
+        ul.appendChild(liTime);
+        ul.appendChild(liPath);
+      }
+
+      liNotebook.appendChild(ul);
+      ol.appendChild(liNotebook);
+    });
+
+    container.appendChild(ol);
+  };
+
+  // Conectar eventos
+  notebookTracker.currentChanged.connect(updateDashboard);
+  notebookTracker.widgetAdded.connect(updateDashboard);
+
+  // Añadir al shell y activar
+  app.shell.add(widget, 'main');
+  updateDashboard();
+  app.shell.activateById(widget.id);
+}
+
+
+
+  
