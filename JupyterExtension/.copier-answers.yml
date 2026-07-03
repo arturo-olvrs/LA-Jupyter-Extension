@@ -1,0 +1,15 @@
+# Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+_commit: v4.5.0
+_src_path: https://github.com/jupyterlab/extension-template
+author_email: arturoolivares@correo.ugr.es
+author_name: Arturo Olivares Martos
+has_ai_rules: false
+has_binder: true
+has_settings: false
+kind: frontend-and-server
+labextension_name: LA_Jupyter_Extension
+project_short_description: A JupyterLab extension for LA
+python_name: LA_Jupyter_Extension
+repository: https://git.uni-due.de/colaps/la-rp/group-4/la-extension.git
+test: true
+

@@ -1,0 +1,81 @@
+\section{Results}
+\subsection{Sample Characteristics}
+
+Sample characteristics are available in Table~\ref{tab:sample_characteristics}. The final sample consisted of 22 students, including 9 female and 11 male participants, while 2 participants did not specify their gender. Participants' ages ranged from 21 to 28 years ($M = 25$, $SD = 2.145$). Thirteen participants reported prior experience with Jupyter Notebook. Self-reported Python proficiency was measured on a scale from 1 to 10 and showed a relatively even distribution across different levels of expertise, allowing the dashboard to be evaluated by students with varying programming backgrounds. The participants spent an average of $17.289$ minutes testing the dashboard.
+\begin{table}
+  \centering
+  \caption{Sample Characteristics ($N=22$)}
+  \label{tab:sample_characteristics}
+  \small
+  \begin{tabular}{@{} l l r @{}} 
+    \toprule
+    \textbf{Characteristic} & \textbf{Category / Metric} & {\textbf{Value}} \\
+    \midrule
+    \textbf{Gender}         & Female                & 9 ($40.9\%$) \\
+                            & Male                  & 11 ($50.0\%$) \\
+                            & Unspecified           & 2 ($9.1\%$) \\
+    \addlinespace
+    \textbf{Age (Years)}    & Mean (SD)             & $25.00$ ($2.15$) \\
+                            & Range                 & {21--28} \\
+    \addlinespace
+    \textbf{Coding Knowledge} & Mean (SD)          & $4.82$ ($2.70$) \\
+                            & Range                 & {0--9} \\
+    \addlinespace
+    \textbf{Testing Duration (min)} & Mean (SD)   & $17.29$ ($7.68$) \\
+                            & Range                 & {3--34} \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsection{Reliability of Scales}
+The internal consistency of the multi-item scales was assessed using Cronbach's alpha~\cite{cronbach1951coefficient}. The System Usability Scale demonstrated acceptable to good reliability ($\alpha = .794$). For the Technology Acceptance Model subscales, Perceived Usefulness achieved good reliability ($\alpha = .852$), and Perceived Ease of Use showed excellent reliability ($\alpha = .941$). These reliability estimates confirm that the scales are sufficiently consistent for the purposes of this study, despite the relatively small sample size ($N = 22$). No items were removed to improve alpha, as all contributed positively to their respective scales.
+
+\subsection{Descriptive Statistics}
+Descriptive statistics for all main study variables are presented in Table~\ref{tab:descriptive_stats}.
+Participants ($N = 22$) rated the perceived usability of the dashboard with a mean SUS score of $M = 65.57$ ($SD = 17.89$, range $40-90$). This value falls slightly below the widely reported average SUS benchmark of 68, indicating usability in the lower-to-average range. The Technology Acceptance Model (TAM) overall score averaged $M = 5.36$ ($SD = 0.88$, range $3.25-6.75$) on a 7-point Likert scale. The subscale Perceived Usefulness (PU) had a mean of $M = 4.93$ ($SD = 1.18$), while Perceived Ease of Use (PEOU) was higher at $M = 5.78$ ($SD = 1.06$). These values suggest moderate-to-positive perceptions of usefulness and particularly ease of use.
+The subjective mental workload (NASA-TLX) yielded a mean overall score of $M = 8.15$ ($SD = 2.92$, range $1.67-12.67$) on a scale of 0 to 20. This indicates a relatively low-to-moderate perceived workload~\cite{hertzum2021reference}. 
+\begin{table}
+  \centering
+  \caption{Descriptive Statistics of Main Study Variables ($N=22$)}
+  \label{tab:descriptive_stats}
+  \small
+  \begin{tabular}{l r r r r}
+    \toprule
+    \textbf{Construct} & \textbf{M} & \textbf{SD} & \textbf{Min} & \textbf{Max} \\
+    \midrule
+    System Usability Scale (SUS)   & 65.57 & 17.89 & 40.00 & 90.00 \\
+    TAM Overall                    &  5.36 &  0.88 &  3.25 &  6.75 \\
+    \quad Perceived Usefulness (PU)  &  4.93 &  1.18 &  3.33 &  7.00 \\
+    \quad Perceived Ease of Use (PEOU) &  5.78 &  1.06 &  3.17 &  7.00 \\
+    NASA-TLX (Mental Workload)     &  8.15 &  2.92 &  1.67 & 12.67 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Distributions were largely symmetric with a skewness near 0 for SUS and overall TAM, with some negative skewness in PEOU and NASA-TLX, suggesting a slight tendency toward higher ratings in those scales. Kurtosis values were acceptable overall, with no extreme deviations from normality.
+To explore the relationships between usability, technology acceptance, and cognitive workload, Spearman rank-order correlations were computed (see Table~\ref{tab:correlations}). Given the small sample size ($N = 22$) and the use of Likert-scale data, non-parametric correlations were deemed appropriate. As expected, the TAM subscales Perceived Usefulness ($\rho = .816$, $p < .001$) and Perceived Ease of Use ($\rho = .706$, $p < .001$) exhibited strong, positive, and statistically significant correlations with the overall TAM score. Beyond these internal TAM associations, the analyses did not reveal any statistically significant relationships between the main constructs ($p > .05$). Specifically, perceived cognitive workload (NASA-TLX) did not significantly correlate with overall technology acceptance ($\rho = .024$, $p = .914$) or system usability ($\rho = -.099$, $p = .661$). While there was a moderate positive trend between the System Usability Scale (SUS) and Perceived Ease of Use ($\rho = .406$), this association did not reach statistical significance ($p = .061$).
+
+
+\begin{table}
+  \centering
+  \begin{threeparttable}
+    \caption{Spearman Rank Correlations ($\rho$) Between Main Study Variables ($N=22$)}
+    \label{tab:correlations}
+    \small
+    \begin{tabular}{l r r r r r}
+      \toprule
+      \textbf{Variable} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} \\
+      \midrule
+      1. SUS               & ---   &       &       &       &       \\
+      2. PU (TAM)          & .091  & ---   &       &       &       \\
+      3. PEOU (TAM)        & .406  & .222  & ---   &       &       \\
+      4. TAM Overall       & .323  & .816\tnote{*} & .706\tnote{*} & ---   &       \\
+      5. NASA-TLX          & -.099 & .239  & -.255 & .024  & ---   \\
+      \bottomrule
+    \end{tabular}
+    \begin{tablenotes}
+      \footnotesize
+      \item[*] $p < .001$, so these correlations are statistically significant.
+    \end{tablenotes}
+  \end{threeparttable}
+\end{table}

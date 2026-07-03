@@ -1,0 +1,5 @@
+{
+  "packageManager": "python",
+  "packageName": "LA_Jupyter_Extension",
+  "uninstallInstructions": "Use your Python package manager (pip, conda, etc.) to uninstall the package LA_Jupyter_Extension"
+}

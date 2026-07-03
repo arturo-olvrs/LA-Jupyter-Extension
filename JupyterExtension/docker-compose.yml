@@ -1,0 +1,20 @@
+services:
+  jupyter-study:
+    build: .
+    container_name: la_extension_container
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./DataBase:/data
+    environment:
+      - DB_PATH=/data/db.db
+    restart: always
+    command: >
+      jupyter lab 
+      --ip=0.0.0.0 
+      --port=8888 
+      --no-browser 
+      --ServerApp.token='' 
+      --ServerApp.password=''
+      --ServerApp.allow_origin='*'
+      --ServerApp.authenticate_external_widgets=False

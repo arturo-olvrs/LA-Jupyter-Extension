@@ -1,0 +1,369 @@
+%%
+%% This is file `sample-acmsmall-conf.tex',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% samples.dtx  (with options: `all,proceedings,bibtex,acmsmall-conf')
+%% 
+%% IMPORTANT NOTICE:
+%% 
+%% For the copyright see the source file.
+%% 
+%% Any modified versions of this file must be renamed
+%% with new filenames distinct from sample-acmsmall-conf.tex.
+%% 
+%% For distribution of the original source see the terms
+%% for copying and modification in the file samples.dtx.
+%% 
+%% This generated file may be distributed as long as the
+%% original source files, as listed above, are part of the
+%% same distribution. (The sources need not necessarily be
+%% in the same archive or directory.)
+%%
+%%
+%% Commands for TeXCount
+%TC:macro \cite [option:text,text]
+%TC:macro \citep [option:text,text]
+%TC:macro \citet [option:text,text]
+%TC:envir table 0 1
+%TC:envir table* 0 1
+%TC:envir tabular [ignore] word
+%TC:envir displaymath 0 word
+%TC:envir math 0 word
+%TC:envir comment 0 0
+%%
+%% The first command in your LaTeX source must be the \documentclass
+%% command.
+%%
+%% For submission and review of your manuscript please change the
+%% command to \documentclass[manuscript, screen, review]{acmart}.
+%%
+%% When submitting camera ready or to TAPS, please change the command
+%% to \documentclass[sigconf]{acmart} or whichever template is required
+%% for your publication.
+%%
+%%
+\documentclass[acmsmall]{acmart}
+%%
+%% \BibTeX command to typeset BibTeX logo in the docs
+\AtBeginDocument{%
+  \providecommand\BibTeX{{%
+    Bib\TeX}}}
+
+%% Rights management information.  This information is sent to you
+%% when you complete the rights form.  These commands have SAMPLE
+%% values in them; it is your responsibility as an author to replace
+%% the commands and values with those provided to you when you
+%% complete the rights form.
+\setcopyright{acmlicensed}
+\copyrightyear{2026}
+\acmYear{2026}
+\acmDOI{XXXXXXX.XXXXXXX}
+%% These commands are for a PROCEEDINGS abstract or paper.
+\acmConference[Conference acronym 'XX]{Make sure to enter the correct
+  conference title from your rights confirmation email}{June 03--05,
+  2018}{Woodstock, NY}
+%%
+%%  Uncomment \acmBooktitle if the title of the proceedings is different
+%%  from ``Proceedings of ...''!
+%%
+%%\acmBooktitle{Woodstock '18: ACM Symposium on Neural Gaze Detection,
+%%  June 03--05, 2018, Woodstock, NY}
+\acmISBN{978-1-4503-XXXX-X/2018/06}
+
+
+%%
+%% Submission ID.
+%% Use this when submitting an article to a sponsored event. You'll
+%% receive a unique submission ID from the organizers
+%% of the event, and this ID should be used as the parameter to this command.
+%%\acmSubmissionID{123-A56-BU3}
+
+%%
+%% For managing citations, it is recommended to use bibliography
+%% files in BibTeX format.
+%%
+%% You can then either use BibTeX with the ACM-Reference-Format style,
+%% or BibLaTeX with the acmnumeric or acmauthoryear sytles, that include
+%% support for advanced citation of software artefact from the
+%% biblatex-software package, also separately available on CTAN.
+%%
+%% Look at the sample-*-biblatex.tex files for templates showcasing
+%% the biblatex styles.
+%%
+
+%%
+%% The majority of ACM publications use numbered citations and
+%% references.  The command \citestyle{authoryear} switches to the
+%% "author year" style.
+%%
+%% If you are preparing content for an event
+%% sponsored by ACM SIGGRAPH, you must use the "author year" style of
+%% citations and references.
+%% Uncommenting
+%% the next command will enable that style.
+%%\citestyle{acmauthoryear}
+
+
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{threeparttable}
+\captionsetup[table]{skip=5pt} % Ajusta el 'skip' a los puntos que desees
+%%
+%% end of the preamble, start of the body of the document source.
+\begin{document}
+
+%%
+%% The "title" command has an optional parameter,
+%% allowing the author to define a "short title" to be used in page headers.
+\title{Monitoring and Understanding Notebook-Based Learning with Jupyter}
+\subtitle{A Dashboard for Student Self-Assessment}
+
+%%
+%% The "author" command and its associated commands are used to define
+%% the authors and their affiliations.
+%% Of note is the shared affiliation of the first two authors, and the
+%% "authornote" and "authornotemark" commands
+%% used to denote shared contribution to the research.
+\author{Arturo Olivares Martos}
+\email{arturoolivares@correo.ugr.es}
+\email{arturo.olivares@stud.uni-due.de}
+\affiliation{%
+  \institution{Universidad de Granada}
+  \city{Granada}
+  \country{Spain}
+}
+
+\author{Lisa Pawlowski}
+\email{lisa.pawlowski.99@stud.uni-due.de}
+\affiliation{%
+  \institution{University of Duisburg-Essen}
+  \city{Duisburg}
+  \country{Germany}
+}
+
+\author{Mohamed Abdelmagied}
+\email{mohamed.abdelmagied@stud.uni-due.de}
+\affiliation{%
+  \institution{University of Duisburg-Essen}
+  \city{Duisburg}
+  \country{Germany}
+}
+
+\author{Kaimao Sheng}
+\email{kaimao.sheng@uni-due.de}
+\affiliation{%
+  \institution{University of Duisburg-Essen}
+  \city{Duisburg}
+  \country{Germany}
+}
+
+\author{Irene-Angelica Chounta}
+\email{irene-angelica.chounta@uni-due.de}
+\affiliation{%
+  \institution{University of Duisburg-Essen}
+  \city{Duisburg}
+  \country{Germany}
+}
+
+%%
+%% By default, the full list of authors will be used in the page
+%% headers. Often, this list is too long, and will overlap
+%% other information printed in the page headers. This command allows
+%% the author to define a more concise list
+%% of authors' names for this purpose.
+%\renewcommand{\shortauthors}{Trovato et al.}
+
+%%
+%% The abstract is a short summary of the work to be presented in the
+%% article.
+\begin{abstract}
+  As programming becomes increasingly integrated into scientific and educational workflows, the need to understand how users interact with computational notebooks has grown. This project introduces a JupyterLab dashboard extension that monitors and visualizes notebook activity, including notebook openings, cell execution outcomes, errors, and retries. The system produces summary statistics and visual timelines that portray how the workflow unfolds. The dashboard is intended to be used by students for self-assessment and awareness of their coding patterns. A survey was conducted to gather user feedback on the dashboard's usability and usefulness. The insights gained from this evaluation serve as a pilot study, establishing a baseline for the tool's usability and paving the way for future research on its pedagogical impact.
+\end{abstract}
+%%
+%% The code below is generated by the tool at http://dl.acm.org/ccs.cfm.
+%% Please copy and paste the code instead of the example below.
+%%
+\begin{CCSXML}
+<ccs2012>
+   <concept>
+       <concept_id>10010405.10010489.10010491</concept_id>
+       <concept_desc>Applied computing~Interactive learning environments</concept_desc>
+       <concept_significance>500</concept_significance>
+       </concept>
+   <concept>
+       <concept_id>10003120.10003145.10011769</concept_id>
+       <concept_desc>Human-centered computing~Empirical studies in visualization</concept_desc>
+       <concept_significance>500</concept_significance>
+       </concept>
+ </ccs2012>
+\end{CCSXML}
+
+\ccsdesc[500]{Applied computing~Interactive learning environments}
+\ccsdesc[500]{Human-centered computing~Empirical studies in visualization}
+
+%%
+%% Keywords. The author(s) should pick words that accurately describe
+%% the work being presented. Separate the keywords with commas.
+\keywords{
+  Jupyter Notebooks,
+  Learning Analytics,
+  Educational Dashboards,
+  Student Self-Assessment,
+  Instructor Insights,
+  Interactive Coding Environments
+}
+%% A "teaser" image appears between the author and affiliation
+%% information and the body of the document, and typically spans the
+%% page.
+% \begin{teaserfigure}
+%   \includegraphics[width=\textwidth]{sampleteaser}
+%   \caption{Seattle Mariners at Spring Training, 2010.}
+%   \Description{Enjoying the baseball game from the third-base
+%   seats. Ichiro Suzuki preparing to bat.}
+%   \label{fig:teaser}
+% \end{teaserfigure}
+
+
+%%
+%% This command processes the author and affiliation and title
+%% information and builds the first part of the formatted document.
+\maketitle
+%% MUC OUTLINE
+%% Lisa and Arturo, please fill out the following points
+\section{Introduction}
+
+% What is this paper about? Here you should make an opening statement what the reader will read in the following pages
+This paper presents the design of a newly developed JupyterLab extension -- a learner-facing dashboard that tracks detailed notebook interactions, such as cell-level execution histories and error patterns, to support self-reflection in programming education.
+%Why is this topic important?
+Understanding the programming process is important because computational notebooks are central to modern data science education, yet instructors often lack visibility into how students work, and learners themselves rarely have opportunities to reflect on their own workflows, error patterns, or problem-solving behaviors~\cite{perkel2018jupyter, robinson2022error}.
+% What is the state-of-the-art about that topic
+Related research explores the use of learning dashboards to enhance students' self-awareness, foster reflection, and offer instructors actionable insights into learner behavior.
+%What is the gap from other works and how does your work address this gap?
+However, the majority of existing dashboards focus on high-level learning management system data rather than fine-grained programming behavior within computational notebooks~\cite{paulsen2024learning}.
+To address this gap, we develop a student-centered dashboard extension in JupyterLab and evaluate its usability, perceived usefulness, and cognitive workload through an exploratory study with 22 students using standardized evaluation instruments (SUS, TAM, and NASA-TLX)~\cite{germanupa_sus, davis1989technology, hart1988development}.
+%State your research question
+In particular, we aim to answer the following research question: \textit{Whether the proposed dashboard extension is perceived by students as useful, easy to integrate into their workflow, and usable without imposing an excessive cognitive workload during programming tasks.}
+
+%State your research contribution
+This work has two contributions: 1) the design and implementation of a dashboard that captures programming behavior directly within JupyterLab, shifting focus from final code correctness to the learning process, and 2) empirical evidence on its acceptance, usability and cognitive impact, offering practical insights for building reflective tools in computational learning environments.
+
+
+\section{Related Work}
+%This should summarize the related work in approximately half a page.
+Jupyter notebooks are widely used for scientific computing, data analysis, and programming education \cite{perkel2018jupyter}. Their combination of executable code, narrative text, and visual output supports exploratory and iterative work practices in which learners repeatedly test, revise, and interpret code. At the same time, programming learners often struggle with error identification and debugging, frequently relying on trial-and-error strategies \cite{robinson2022error}. Prior work on notebook-based analytics shows that cell-level traces such as execution patterns, time on task, and navigation behavior can reveal retries, hesitation, and fragmented workflows that remain invisible in final notebook submissions \cite{cai2025jupyter,JELAI}. %From an HCI perspective, such notebook activity can be understood as part of broader sensemaking processes, in which users iteratively annotate, branch, document, and revise computational work \cite{raghunandan2023code}.
+
+Learning dashboards have been discussed as tools for supporting awareness, reflection, and self-regulated learning \cite{schwendimann2016perceiving,corrin2014exploring}. However, many existing dashboards rely on coarse-grained learning management system data, such as resource access, assignment completion, or overall activity patterns, which limits their ability to represent the step-by-step nature of programming work \cite{paulsen2024learning}. %Human-centered perspectives on learning analytics emphasize that dashboards should not be designed around data availability alone, but around users' needs, contexts, and interpretation processes \cite{chejara2024human}. %This is particularly relevant for programming education, where dashboard visualizations need to be understandable and actionable within an already complex coding environment.
+Existing approaches in programming education often remain instructor-facing, assignment-level, or performance-oriented, rather than supporting student-directed reflection on fine-grained coding behavior \cite{sondagar2021elearning,groher2024learning}. For learner-facing dashboards, the central challenge is not only to visualize activity data, but to support students' sense-making and actionability. \cite{jivet2020students} show that students' interpretation of dashboard visualizations depends on factors such as transparency of design, reference frames, and support for action. In addition, dashboard information design may affect cognitive load and learning performance, making workload an important evaluation dimension \cite{cheng2024influence}. %Taken together, prior work suggests a gap in understanding how students perceive fine-grained, learner-facing visualizations of notebook-based programming behavior in terms of usability, usefulness, and workload. The present study addresses this gap by designing and evaluating a JupyterLab dashboard that visualizes cell-level interaction data to support student self-reflection.
+
+%\section{Methodology}
+\section{Dashboard Design and Implementation}
+%here you describe how you designed and implemented the dashboard
+Our learner-facing dashboard extension is designed to help students reflect on their work and identify learning gaps during programming tasks within JupyterLab. A video demo of our extension can be found \href{https://www.youtube.com/watch?v=VZKJdUi2B-k}{\color{blue}\underline{here}}.
+\subsection{Data Collection Mechanism}
+
+Using JupyterLab's API~\cite{jupyterlab_tutorial_2024, jupyterlab_extension_template}, the tool monitors active sessions and logs telemetry events in a relational SQLite database containing six core tables:
+\begin{description}
+    \item[Users] Stores anonymous personal codes and roles (student/teacher\footnote{The teacher role is there for potential future use.}). %The code is only used to link the data collected from the JupyterLab extension to the survey responses.
+    
+    \item[Notebooks] Tracks notebook metadata (title, path, author).
+    
+    \item[Notebook Sessions] Captures timestamps for when notebooks are opened and closed and by whom.
+    
+    \item[Cells] Logs cell types (code, markdown, raw) and original content.
+    
+    \item[Active Cells] Monitors active user focus with exact interaction durations.
+    
+    \item[Cell Executions] Tracks code execution metrics, runtime outputs, and error counts/messages.
+\end{description}
+
+\subsection{Data Visualization Panels}
+
+The user interface, accessible through the JupyterLab command palette, is organized into distinct panels\footnote{The dashboard visualization is available \href{https://git.uni-due.de/colaps/la-rp/group-4/la-extension/-/raw/master/MUC\%20-\%20StudentResearchCompetition/Dashboard/Dashboard.pdf?ref_type=heads&inline=true}{\color{blue}\underline{here}}.} (each featuring a ``Help'' button for interpretation):
+\begin{description}
+    \item[User Information] Displays the user's anonymous ID code and role.
+
+    \item[Current Progress] Shows a percentage metric tracking error-free code execution according to Equation~\eqref{eq:progress}.
+    \begin{equation}\label{eq:progress}
+        \text{Progress} = \frac{\text{Number of code cells with an execution without errors}}{\text{Total number of code cells}}
+        \times 100\%
+    \end{equation}
+
+    \item[Success/Error/Attempt Rate] Classifies cells into three status categories and shows the rate of each category:
+    \begin{itemize}
+        \item \emph{Successful}: Single execution, zero errors.
+        \item \emph{Attempted}: Multiple executions, but the final attempt was successful.
+        \item \emph{Error}: The final execution resulted in a failure.
+    \end{itemize}
+
+    \item[Error Rate] Displays overall execution failure rates using a dynamic color gradient scale (0\% green to 100\% red) according to Equation~\eqref{eq:error_rate}.
+    \begin{equation}\label{eq:error_rate}
+        \text{Error Rate} = \frac{\text{Number of executions with errors}}{\text{Total number of executions}}
+        \times 100\%
+    \end{equation}
+
+    \item[Top Error Cells] Lists the top $n$ cells with the most failed executions, including a jump-to-cell navigation link.
+
+    \item[Top Attempt Cells] Highlights the top $n$ cells requiring the highest volume of total executions.
+
+    \item[Top Time-Consuming Cells] Ranks cells by total time active during the workspace session.
+
+    \item[Top Common Error Types] Tallies occurrences of specific Python exceptions (e.g., \texttt{SyntaxError}, \texttt{NameError}).
+
+    \item[Execution Timeline] A chronologically plotted dot graph of executions, color-coded by outcome (green for success, red for errors) to illustrate workflow trends over time.
+\end{description}
+
+
+\section{Evaluation}
+%here you describe how you evaluated the dashboard and present the instruments you used for the evaluation
+
+To evaluate how students experience the dashboard as a learner-facing reflection interface, we conducted an exploratory, cross-sectional user study. The aim was to assess students' perceptions of the dashboard in terms of usability, perceived usefulness, ease of use, and workload. Twenty-two (22) students participated in the study and interacted with the dashboard while solving Python exercises in JupyterLab. Participants differed in their prior experience with Jupyter Notebook and Python, allowing the dashboard to be evaluated by learners with varying programming backgrounds.
+
+The study was approved by the Ethics Committee of the Faculty of Computer Science at the University of Duisburg-Essen\footnote{Ethics certificate ID: 2601CMPL2910.}. After providing informed consent, participants first answered background questions on their previous experience with Jupyter Notebook and Python. They then used the JupyterLab dashboard during a programming task and subsequently completed standardized post-use questionnaires\footnote{Questionnaires are available \href{https://git.uni-due.de/colaps/la-rp/group-4/la-extension/-/raw/master/MUC\%20-\%20StudentResearchCompetition/Questionaire.pdf?ref_type=heads&inline=true}{\color{blue}\underline{here}}.}. Usability was measured with the System Usability Scale (SUS), a ten-item instrument resulting in a score from 0 to 100 \cite{germanupa_sus}. Perceived usefulness and perceived ease of use were assessed using items based on the Technology Acceptance Model (TAM) \cite{davis1989technology}. Subjective workload was measured with the NASA Task Load Index (NASA-TLX), covering mental demand, physical demand, temporal demand, perceived performance, effort, and frustration \cite{hart1988development}.
+
+The collected data were analyzed descriptively to summarize students' perceptions of the dashboard. In addition, Spearman rank correlations were computed exploratively to examine relationships between usability, perceived usefulness, ease of use, and workload. This evaluation provides an initial empirical basis for understanding whether fine-grained notebook visualizations can be integrated into students' programming workflows without imposing excessive cognitive burden.
+
+\section{Results}
+The final sample consisted of 22 students with varying prior experience in Jupyter Notebook and Python. On average, participants spent about 17 minutes testing the dashboard while solving Python exercises. All multi-item scales showed acceptable to excellent internal consistency (SUS: $\alpha=.794$; PU: $\alpha=.852$; PEOU: $\alpha=.941$). Descriptive statistics are reported in Table~\ref{tab:descriptive_stats}.
+
+\begin{table}
+  \centering
+  \caption{Descriptive Statistics of Main Evaluation Measures ($N=22$)}
+  \label{tab:descriptive_stats}
+  \small
+  \begin{tabular}{l r r r r}
+    \toprule
+    \textbf{Measure} & \textbf{M} & \textbf{SD} & \textbf{Min} & \textbf{Max} \\
+    \midrule
+    System Usability Scale (SUS)      & 65.57 & 17.89 & 40.00 & 90.00 \\
+    TAM Overall                       &  5.36 &  0.88 &  3.25 &  6.75 \\
+    \quad Perceived Usefulness (PU)   &  4.93 &  1.18 &  3.33 &  7.00 \\
+    \quad Perceived Ease of Use (PEOU)&  5.78 &  1.06 &  3.17 &  7.00 \\
+    NASA-TLX                          &  8.15 &  2.92 &  1.67 & 12.67 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+The mean SUS score (65.57) fell just below the common benchmark of 68, indicating generally usable but improvable interface design; presenting multiple fine-grained indicators at once may have raised perceived complexity for some users.
+
+Technology acceptance was positive overall (TAM $M=5.36$ on a seven-point scale), but Perceived Ease of Use exceeded Perceived Usefulness ($5.78$ vs.\ $4.93$). Students thus found the dashboard easy to operate, while its immediate value for self-reflection was less evident. Qualitative comments echoed this: some participants saw the dashboard as more useful for instructors, or asked for more actionable support such as guidance on resolving specific errors.
+
+Subjective workload was low to moderate (NASA-TLX $M=8.15$ on a 0--20 scale), suggesting the dashboard did not impose excessive cognitive burden. Together, these results indicate that fine-grained notebook visualizations can be integrated into students' workflows in a usable, low-workload manner, but that their reflective value depends on stronger interpretive and actionable support.
+
+\section{Conclusions}
+%Brief summary of your findings and implications
+This study presented and evaluated a learner-facing JupyterLab dashboard that visualizes fine-grained notebook interactions to support students' reflection on their programming processes. The results suggest these visualizations can be integrated into notebook-based workflows with good usability and low workload: students found the dashboard relatively easy to use and did not report excessive cognitive burden, though they rated its usefulness for self-reflection more moderately. Visibility is thus only the first step--learners also need support in interpreting the information and translating it into concrete next steps. This work contributes an initial learner-centered evaluation of fine-grained notebook visualizations as reflection interfaces in programming education.
+
+
+
+\nocite{*}
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{sample-base}
+
+
+
+\end{document}
+\endinput
+%%
+%% End of file `sample-acmsmall-conf.tex'.
