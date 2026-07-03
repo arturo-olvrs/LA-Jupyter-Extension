@@ -22,6 +22,31 @@ Following rigorous academic and open-science standards, the repository is struct
 
 ---
 
+## 🚀 Quick Start & Deployment
+
+This repository includes a full infrastructure automation pipeline to build the environment, initialize the relational databases, and deploy the JupyterLab server with the preconfigured extension in a single command.
+
+### Prerequisites
+*   **Docker** installed and running on your system.
+*   **Docker Compose** (or native support via `docker compose`).
+
+### Launching the Experiment
+
+1. Clone this repository and navigate to the root directory.
+2. Run the deployment script corresponding to your operating system to boot the entire stack:
+
+   * **On Linux / macOS:**
+     ```bash
+     chmod +x start_study.sh
+     ./start_study.sh
+     ```
+   * **On Windows (Command Prompt / PowerShell):**
+     ```cmd
+     start_study.bat
+     ```
+
+---
+
 ## 🛠️ Technologies & Research Domains
 *   **Domain Expertise:** Learning Analytics (LA), Human-Computer Interaction (HCI), Educational Data Mining (EDM).
 *   **Extension Ecosystem:** JavaScript / TypeScript / Python (Jupyter Notebook / JupyterLab Extension architecture).
