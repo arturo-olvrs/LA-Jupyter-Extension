@@ -51,11 +51,3 @@ This repository includes a full infrastructure automation pipeline to build the 
 *   **Domain Expertise:** Learning Analytics (LA), Human-Computer Interaction (HCI), Educational Data Mining (EDM).
 *   **Extension Ecosystem:** JavaScript / TypeScript / Python (Jupyter Notebook / JupyterLab Extension architecture).
 *   **Data Science Stack:** SQL / Pandas / Data Pipelines for telemetry logging and behavioral data processing.
-
----
-
-## 🎓 Credits & Affiliation
-*   **Author:** Arturo Olivares Martos
-*   **Institution:** Universität Duisburg-Essen (UDE) — Duisburg, Germany
-*   **Course:** Learning Analytics
-*   **Target Venue:** Mensch und Computer (MuC) — Student Research Competition
