@@ -4,6 +4,14 @@ This repository contains the research codebase, datasets, and academic papers fo
 
 The core of the project is a custom Jupyter Notebook extension designed to track, analyze, and present real-time learning behavior analytics. The resulting paper was submitted to the **MUC (Mensch und Computer) Student Research Competition**, one of the premier conferences for Human-Computer Interaction (HCI) in Europe.
 
+--- 
+## 📄 Publication
+
+This research was officially published at **Mensch und Computer (MuC 2026)**:
+
+* **Title:** *Monitoring and Understanding Notebook-Based Learning with Jupyter - A Dashboard for Student Self-Assessment*
+* **Track:** MCI: Student Research Competition (MuC 2026, Duisburg)
+* **DOI:** [10.18420/muc2026-mci-src-251](https://doi.org/10.18420/muc2026-mci-src-251)
 ---
 
 ## 🏛️ Project Lifecycle & Repository Structure
